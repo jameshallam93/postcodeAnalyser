@@ -4,7 +4,7 @@ Designed to provide data to upload to mapcustomiser.com, a location plotting ser
 
 
 # Instructions
-Add downloaded members data file (obtain from back office) to postcodes folder
+Add downloaded members data file (obtain from back office) to postcodeAnalyser folder
 Add CSV file with list of postcodes to be checked against to the same folder
 Run script - it will return a list of postcodes we reach called "reached"(soon), and another called "unreached"
 
