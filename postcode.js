@@ -5,7 +5,9 @@ of postcodes in which we currently have no members
 Need to refactor a lot of variables for clarity
 ---------------------
 - Add function which returns all postcodes we do cover
-- 
+- Allow for broader searching, i.e. OX14 7B/OX14 7
+- Return frequency of hits
+
 */
 
 
@@ -58,8 +60,8 @@ postcodeSet.map(code =>{
 })
 
 
-const unreachedPostcodes = []
-//a filter that adds postcodes that exist in the area but that we don't have members in to unreachedPostcodes
+let unreachedPostcodes = []
+//a map that adds postcodes that exist in the area but that we don't have members in to unreachedPostcodes
 postcodeSet.map(code =>{
     if (!(uniqueCodes.has(code))){ 
         unreachedPostcodes.push(code)
@@ -78,6 +80,8 @@ const returnStats = () =>{
     console.log(`number of unreached postcodes in area:${unreachedPostcodes.length}`)
 }
 
+//formats the unreached postcodes to be one per line - needed to upload to:
+//https://www.mapcustomizer.com/
 let uploadData = ""
 unreachedPostcodes.map(code =>{
     uploadData = uploadData + code +"\n"
